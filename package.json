@@ -1,0 +1,14 @@
+{
+  "name": "tollpay",
+  "version": "0.1.0",
+  "description": "Look up outstanding tolls across US toll agencies by license plate.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "DEMO_MODE=true node server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

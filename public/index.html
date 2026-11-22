@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TollPay — Find tolls by plate</title>
+  <meta name="description" content="Enter your license plate to find outstanding tolls across US toll agencies.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap brand"><span class="logo" aria-hidden="true">◆</span> TollPay</div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Find all your unpaid tolls in one search</h1>
+      <p class="lede">Enter your license plate and we'll check toll agencies across the US, from E-ZPass states to SunPass, TxTag, and FasTrak.</p>
+
+      <form id="lookup" class="lookup" novalidate>
+        <div class="plate">
+          <label for="state" class="plate-state-label">Issuing state</label>
+          <select id="state" name="state" required>
+            <option value="">State…</option>
+          </select>
+          <label for="plate" class="sr-only">License plate number</label>
+          <input id="plate" name="plate" autocomplete="off" autocapitalize="characters" spellcheck="false"
+                 maxlength="10" placeholder="ABC1234" required>
+        </div>
+        <button type="submit" id="submit">Search tolls</button>
+      </form>
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+    </section>
+
+    <div id="demo-banner" class="banner" hidden>
+      <strong>Demo mode.</strong> Results below are generated <em>sample data</em>, not real toll records.
+      Use the agency links to check your actual balance.
+    </div>
+
+    <section id="results" aria-live="polite" hidden></section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>TollPay is not affiliated with any toll agency. Toll agencies don't share data through one system,
+      so some agencies can only be checked on their own site. We link you directly to each one.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
